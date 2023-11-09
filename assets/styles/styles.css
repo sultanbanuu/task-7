@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: #cbd4e6;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  /* display: flex; */
+}
+
+input {
+  outline: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 121rem;
+}
+
+.logo {
+  width: 13.1rem;
+  height: 5.4rem;
+}
+
+.navbar,
+.navbar-title,
+.sign-up-title {
+  display: flex;
+}
+
+.navbar {
+  justify-content: space-between;
+}
+
+.navbar-title,
+.navbar-title > ul {
+  align-items: center;
+  gap: 2.6rem;
+  font-size: 1.6rem;
+  color: #7c8db0;
+}
+
+.navbar-title > ul > li:hover {
+  color: #605dec;
+}
+
+.sign-up-title {
+  justify-content: space-between;
+}
+
+.sign-up-btn {
+  color: #fafafa;
+  background-color: #605dec;
+  border: none;
+  border-radius: 0.4rem;
+  /* margin: 1.2rem 2rem; */
+  width: 9.5rem;
+  height: 4.8rem;
+}
+
+.header {
+  background-color: #fff;
+  box-shadow: 0.1rem 0.1rem 0.4rem 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 2rem 2rem;
+  border-right: 0.1rem solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 2.8rem 2rem;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 0.2rem;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 1.8rem;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 0.5rem;
+}
+
+.header .menu-icon .navicon:after {
+  top: -0.5rem;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 24rem;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+.icon {
+  position: absolute;
+
+  width: 1.4rem;
+  height: 1.58rem;
+  margin: 0.3rem;
+  margin-top: 1.1rem;
+}
+
+.option-btn button {
+  width: 30rem;
+  background-color: #fff;
+  border: .1rem solid #605DEC;
+  color: #605DEC;
+  padding: 1rem;
+}
+
+/* modal */
+
+.modal {
+  display: none;
+}
+
+.sign-up-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 4rem;
+}
+
+.modal-content {
+  position: relative;
+  top: 12rem;
+  z-index: 3;
+
+  max-width: 33rem;
+  min-height: 30rem;
+  background-color: #fff;
+  margin: auto;
+  border-radius: 1.2rem;
+}
+
+.close {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  content: " ";
+  height: 1.2rem;
+  width: 0.2rem;
+  background-color: #333;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.checkbox-content {
+  display: flex;
+  margin-top: .4rem;
+}
+
+.option-btn {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 1rem;
+}
+
+.create-prof-btn {
+  background-color: #605DEC;
+  color: #ffff;
+  padding: 1rem;
+  border: .1rem solid #605DEC;
+}
+
+.sign-info-input input, .create-prof-btn{
+  width: -webkit-fill-available;
+}
+
+.sign-info-input input {
+  margin-top: .4rem;
+  padding: 1rem;
+}
+
+input[type='checkbox'] {
+  margin-right: .1rem;
+}
+
+
+
+
+
+@media (min-width: 630px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 3rem 3rem;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+
+  ul div {
+    padding: 1rem 1rem;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .header ul {
+    flex-direction: column;
+  }
+
+  .header .menu-btn:checked ~ .menu {
+    min-height: 30rem;
+  }
+}
